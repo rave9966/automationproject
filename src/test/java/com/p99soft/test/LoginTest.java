@@ -11,6 +11,8 @@ import com.p99soft.pages.LoginPage;
 
 public class LoginTest extends BaseTest {
 	
+	
+	
 	//LoginPage loginpage;
 	@Test
 	public void login() { 		

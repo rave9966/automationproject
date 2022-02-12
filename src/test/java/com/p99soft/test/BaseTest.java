@@ -10,6 +10,7 @@ import org.testng.ITestContext;
 import org.testng.annotations.BeforeClass;
 
 import com.p99soft.pages.AmazonHomePage;
+import com.p99soft.pages.BaseConstants;
 import com.p99soft.pages.BasePageObject;
 import com.p99soft.pages.LoginPage;
 
@@ -31,17 +32,28 @@ public class BaseTest {
 	
 	@BeforeClass
 	public void initialization() throws IOException {
-		prop = new Properties();
+		/*
+		 * prop = new Properties();
+		 * 
+		 * // FileInputStream ip = new FileInputStream(System.getProperty("user.dir") +
+		 * "\\src\\main\\java\\com\\crm\\qa\\config\\config.propeties"); //
+		 * prop.load(ip); //String browserName = prop.getProperty("browser"); String
+		 * browserName = "chrome"; if(browserName.equals("chrome")) {
+		 * System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")
+		 * + "\\src\\main\\resources\\drivers\\chromedriver.exe"); driver = new
+		 * ChromeDriver();
+		 * 
+		 * }
+		 */
 		
-	//	FileInputStream ip = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\java\\com\\crm\\qa\\config\\config.propeties");
-	//	prop.load(ip);
-		//String browserName = prop.getProperty("browser");
-		String browserName = "chrome";
-		if(browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\main\\resources\\drivers\\chromedriver.exe");
+		if (BaseConstants.browser.equals("chrome")) {
+			System.setProperty("webdriver.chrome.driver",
+					System.getProperty("user.dir") + "\\src\\main\\resources\\drivers\\chromedriver.exe");
 			driver = new ChromeDriver();
-			
 		}
+		//driver.manage().window().maximize();
+		//logger.info("Chrome Maximized");
+		
 		loadPageObjects(driver);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
@@ -49,7 +61,9 @@ public class BaseTest {
 		//driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICT_WAIT, TimeUnit.SECONDS);
 		
 		//driver.get(prop.getProperty("url"));
-		driver.get("https://www.amazon.in");
+		
+		//driver.get("https://www.amazon.in");
+		driver.get(BaseConstants.testsiteurl);
 	}
 	
 	@AfterClass

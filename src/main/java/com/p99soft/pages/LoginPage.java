@@ -23,14 +23,16 @@ public class LoginPage extends BasePageObject {
 
 	public  void login() {
 		logger.info("Click on Login button");
-		login.click();
+		this.click(login);
+		//login.click();
 		System.out.println("Login clicked");
 	}
 	
 	public  boolean verifyLoginErrorwithBlankPhoneEmail() {
 		boolean isTrue = false;
 		logger.info("Verify Error message with blank phone or email");
-		continueButton.click();
+		this.click(continueButton);
+		//continueButton.click();
 		isTrue = errorMessage.isDisplayed();
 		System.out.println("Login clicked");
 		return isTrue;
