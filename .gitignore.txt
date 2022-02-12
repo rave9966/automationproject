@@ -1,0 +1,27 @@
+#skip log files
+/logs/
+
+.metadata/
+# Eclipse
+.classpath
+.project
+.settings/
+.gitignore
+.screenshots
+target/
+test-output/
+
+#skip taarget folder push to git
+*/target/**
+
+#skip test-output files to git
+*/test-output/**
+
+#skip .git ignore files
+*/.gitignore.txt/**
+
+#skip debug log files
+*/debug.log
+
+#skip bin files
+bin/
