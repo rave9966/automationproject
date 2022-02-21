@@ -16,15 +16,17 @@ public class LoginTest extends BaseTest {
 	//LoginPage loginpage;
 	@Test
 	public void login() { 		
-		System.out.println("Object value is " + amazonHomePage);
+		//System.out.println("Object value is " + amazonHomePage);
 		loginPage.login();	
 	}
-	@Test(dependsOnMethods = {"login"})
-	public void verifyLoginErrorwithBlankPhoneEmail() { 		
-		//System.out.println("Object value is " + amazonHomePage);
-		//assertTrue(true, loginPage.verifyLoginErrorwithBlankPhoneEmail());			
-		assertTrue(loginPage.verifyLoginErrorwithBlankPhoneEmail(), "verified error message");
-	}
+	/*
+	 * @Test(dependsOnMethods = {"login"}) public void
+	 * verifyLoginErrorwithBlankPhoneEmail() {
+	 * //System.out.println("Object value is " + amazonHomePage); //assertTrue(true,
+	 * loginPage.verifyLoginErrorwithBlankPhoneEmail());
+	 * assertTrue(loginPage.verifyLoginErrorwithBlankPhoneEmail(),
+	 * "verified error message"); }
+	 */
 		
 	}
 	
